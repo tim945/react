@@ -2,14 +2,22 @@ import React, { Component } from 'react';
 import { Button } from 'element-react';  //引入element-react
 import 'element-theme-default';          //引入主题
 import logo from './logo.svg';
+import Hello from './components/Hello'; 
+import Clock from './components/Clock'; 
+import Toggle from './components/Toggle'; 
 import './App.css';
 
 // class App extends React.Component {
 class App extends Component {
   constructor() {
     super();
-    this.state = {isClick:true, buttonText: "Click me, please", clickTimes: 0 };
-    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      isClick:true, 
+      buttonText: "Click me, please", 
+      clickTimes: 0, 
+      isToggleOn: true 
+    };
+    // this.handleClick = this.handleClick.bind(this);  // this 指向绑定
   }
 
   handleClick() {
@@ -29,16 +37,22 @@ class App extends Component {
       isClick,  buttonText, clickTimes
     }))      
   }
+  // handleToggleClick
+  handleToggleClick() {
+    this.setState((state) => ({
+      isToggleOn: ! state.isToggleOn
+    }))
+  }
 
   render() {
-    const { buttonText, isClick, clickTimes } = this.state;
+    const { buttonText, isClick, clickTimes, isToggleOn } = this.state;
     return (
       <div className="App">
         <header className="App-header">
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
+          {/* <p>
             Edit <code>src/App.js</code> and save to reload.
-          </p>
+          </p> */}
           <p>
             <a
               className="App-link"
@@ -47,9 +61,14 @@ class App extends Component {
               rel="noopener noreferrer"
             >
               {/* Learn React */}
-              <Button type="primary">element按钮</Button>   {/* 按钮组件 */}
-            </a>
-            <Button type="primary" onClick={this.handleClick} style={{marginLeft:"10px"}}>{buttonText}</Button>
+              <Hello name="Tim" />
+            </a>            
+          </p>
+          {isToggleOn && <Clock isToggleOn={isToggleOn} key={isToggleOn}></Clock> }
+          <Toggle isToggleOn={isToggleOn} onClick={() => this.handleToggleClick()}></Toggle>
+          <p>
+            {/* <Button type="primary">element按钮</Button>*/ }   {/* 按钮组件 */}
+            <Button type="primary" onClick={() => this.handleClick()} style={{marginLeft:"10px"}}>{buttonText}</Button>
             {this.state.isClick} / {clickTimes}
           </p>
         </header>
