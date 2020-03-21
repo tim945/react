@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import Hello from './components/Hello'; 
 import Clock from './components/Clock'; 
 import Toggle from './components/Toggle'; 
+import Search from './components/Search'; 
 import './App.css';
 
 // class App extends React.Component {
@@ -72,6 +73,7 @@ class App extends Component {
             {this.state.isClick} / {clickTimes}
           </p>
         </header>
+        <Search />
       </div>
     );
   }
