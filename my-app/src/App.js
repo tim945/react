@@ -6,6 +6,8 @@ import Hello from './components/Hello';
 import Clock from './components/Clock'; 
 import Toggle from './components/Toggle'; 
 import Search from './components/Search'; 
+import Modal from './components/Modal'; 
+import Routes from './router'; 
 import './App.css';
 
 // class App extends React.Component {
@@ -65,7 +67,7 @@ class App extends Component {
               <Hello name="Tim" />
             </a>            
           </p>
-          {isToggleOn && <Clock isToggleOn={isToggleOn} key={isToggleOn}></Clock> }
+          {!isToggleOn && <Clock isToggleOn={isToggleOn} key={isToggleOn}></Clock> }
           <Toggle isToggleOn={isToggleOn} onClick={() => this.handleToggleClick()}></Toggle>
           <p>
             {/* <Button type="primary">element按钮</Button>*/ }   {/* 按钮组件 */}
@@ -73,7 +75,9 @@ class App extends Component {
             {this.state.isClick} / {clickTimes}
           </p>
         </header>
-        <Search />
+        <Routes />
+        {/* <Search /> */}
+        <Modal />
       </div>
     );
   }
