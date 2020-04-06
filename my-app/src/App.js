@@ -7,6 +7,7 @@ import Clock from './components/Clock';
 import Toggle from './components/Toggle'; 
 import Search from './components/Search'; 
 import Modal from './components/Modal'; 
+import EffectHook from './components/EffectHook'; 
 import Routes from './router'; 
 import './App.css';
 
@@ -47,6 +48,10 @@ class App extends Component {
     }))
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log(prevState.clickTimes)
+  }
+
   render() {
     const { buttonText, isClick, clickTimes, isToggleOn } = this.state;
     return (
@@ -74,6 +79,7 @@ class App extends Component {
             <Button type="primary" onClick={() => this.handleClick()} style={{marginLeft:"10px"}}>{buttonText}</Button>
             {this.state.isClick} / {clickTimes}
           </p>
+          <EffectHook />
         </header>
         <Routes />
         {/* <Search /> */}
