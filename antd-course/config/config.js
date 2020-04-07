@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-06 17:07:21
  * @LastEditors: tim
- * @LastEditTime: 2020-04-06 17:51:52
+ * @LastEditTime: 2020-04-07 17:28:13
  * @Description: 
  */
 export default {
@@ -16,8 +16,39 @@ export default {
       },
     }],
   ],
+  // routes: [
+  //   {
+  //     path: '/',
+  //     component: './HelloWorld',
+  //   }, 
+  //   {
+  //     path: '/tree',
+  //     component: './MyTree',
+  //   }
+  // ],
   routes: [{
     path: '/',
-    component: './HelloWorld',
+    component: '../layout',
+    routes: [
+      {
+        path: '/',
+        component: 'Helloworld',
+      },
+      {
+        path: '/helloworld',
+        component: 'Helloworld'
+      },
+      {
+        path: '/dashboard',
+        routes: [
+          { path: '/dashboard/analysis', component: 'Dashboard/Analysis' },
+          { path: '/dashboard/monitor', component: 'Dashboard/Monitor' },
+          { path: '/dashboard/workplace', component: 'Dashboard/Workplace' }
+          // { path: 'analysis', component: 'Dashboard/Analysis' },
+          // { path: 'monitor', component: 'Dashboard/Monitor' },
+          // { path: 'workplace', component: 'Dashboard/Workplace' }
+        ]
+      },
+    ]
   }],
 };
