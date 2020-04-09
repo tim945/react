@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-06 17:07:21
  * @LastEditors: tim
- * @LastEditTime: 2020-04-07 17:28:13
+ * @LastEditTime: 2020-04-09 09:42:41
  * @Description: 
  */
 export default {
@@ -38,6 +38,7 @@ export default {
         path: '/helloworld',
         component: 'Helloworld'
       },
+      { path: '/puzzlecards', component: './puzzlecards' },
       {
         path: '/dashboard',
         routes: [

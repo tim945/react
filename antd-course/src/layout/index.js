@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-07 15:27:19
  * @LastEditors: tim
- * @LastEditTime: 2020-04-07 17:17:32
+ * @LastEditTime: 2020-04-09 09:45:59
  * @Description: 
  */
 import { Component } from 'react';
@@ -25,7 +25,7 @@ export default class BasicLayout extends Component {
                 <Icon type="pie-chart" />
                 <span>Helloworld</span>
               </Link>
-            </Menu.Item>
+            </Menu.Item>            
             <SubMenu
               key="sub1"
               title={<span><Icon type="dashboard" /><span>Dashboard</span></span>}
@@ -48,8 +48,15 @@ export default class BasicLayout extends Component {
                   <Menu.Item key="8"><Link to="/">菜单1-3-2</Link></Menu.Item>
                 </SubMenu>
             </SubMenu>
+            <Menu.Item key="9">
+              <Link to="/puzzlecards">
+                <Icon type="dashboard" />
+                <span>Puzzle Cards</span>
+              </Link>
+            </Menu.Item>
           </Menu>
         </Sider>
+
         <Layout >
           <Header style={{ background: '#fff', textAlign: 'center', padding: 0 }}>Header</Header>
           <Content style={{ margin: '24px 16px 0' }}>
