@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-06 17:07:21
  * @LastEditors: tim
- * @LastEditTime: 2020-04-09 09:42:41
+ * @LastEditTime: 2020-04-10 10:57:56
  * @Description: 
  */
 export default {
@@ -52,4 +52,10 @@ export default {
       },
     ]
   }],
+  proxy: {
+    '/dev': {
+      target: 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com',
+      changeOrigin: true,
+    },
+  },
 };

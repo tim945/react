@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-09 09:38:46
  * @LastEditors: tim
- * @LastEditTime: 2020-04-09 18:16:44
+ * @LastEditTime: 2020-04-10 10:12:27
  * @Description: 
  */
 import React, { Component } from 'react';
@@ -38,7 +38,12 @@ const mapDispatchToProps = (dispatch) => {
         type: `${namespace}/delCard`,
         payload: id,
       });
-    }
+    },
+    onDidMount: () => {
+      dispatch({
+        type: `${namespace}/queryInitCards`,
+      });
+    },
   };
 };
 
@@ -84,6 +89,10 @@ export default class PuzzleCards extends Component {
   //     return {cardList}
   //   })
   // }
+
+  componentDidMount() {
+    this.props.onDidMount();
+  }
 
   render() {
     return (

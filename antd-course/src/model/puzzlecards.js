@@ -2,9 +2,16 @@
  * @Author: tim
  * @Date: 2020-04-09 10:41:14
  * @LastEditors: tim
- * @LastEditTime: 2020-04-09 18:17:08
+ * @LastEditTime: 2020-04-10 11:03:11
  * @Description: 
  */
+import request from '../util/request'; 
+
+const delay = (millisecond) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, millisecond);
+  });
+};
 
 export default {
   namespace: 'puzzlecards',
@@ -22,6 +29,24 @@ export default {
     ],
     counter: 2
   },
+  // 异步
+  effects: {
+    *queryInitCards(_, sagaEffects) {
+      const { call, put } = sagaEffects;
+      // const endPointURI = 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/dev/random_joke';
+      const endPointURI = '/dev/random_joke';
+      console.log(_, sagaEffects, arguments)
+
+      // const puzzle = yield call(request, endPointURI);
+      // yield put({ type: 'addNewCard', payload: puzzle });
+
+      // yield call(delay, 3000);
+
+      // const puzzle2 = yield call(request, endPointURI);
+      // yield put({ type: 'addNewCard', payload: puzzle2 });
+    }
+  },
+  // 同步  
   reducers: {
     addNewCard(state, { payload: newCard }) {
     // addNewCard(state, { data: newCard }) {
@@ -39,6 +64,6 @@ export default {
         cardList,
         counter: state.counter
       }
-    }
-  },
+    }    
+  }
 };
