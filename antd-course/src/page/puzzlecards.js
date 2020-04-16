@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-09 09:38:46
  * @LastEditors: tim
- * @LastEditTime: 2020-04-10 10:12:27
+ * @LastEditTime: 2020-04-10 19:29:43
  * @Description: 
  */
 import React, { Component } from 'react';
@@ -42,6 +42,7 @@ const mapDispatchToProps = (dispatch) => {
     onDidMount: () => {
       dispatch({
         type: `${namespace}/queryInitCards`,
+        test: '111'
       });
     },
   };

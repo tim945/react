@@ -1,4 +1,11 @@
 /*
+ * @Author: tim
+ * @Date: 2020-04-10 10:58:33
+ * @LastEditors: tim
+ * @LastEditTime: 2020-04-16 18:21:48
+ * @Description: 
+ */
+
 const random_jokes = [
   {
     setup: 'What is the object oriented way to get wealthy ?',
@@ -22,7 +29,11 @@ export default {
     random_joke_call_count += 1;
     setTimeout(() => {
       res.json(responseObj);
+
+      // 模拟 http 请求出错
+      // res.status(500);
+      // res.json({});
+
     }, 3000);
   },
 };
-*/
