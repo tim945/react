@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-07 15:27:19
  * @LastEditors: tim
- * @LastEditTime: 2020-04-09 09:45:59
+ * @LastEditTime: 2020-04-29 15:16:23
  * @Description: 
  */
 import { Component } from 'react';
@@ -52,6 +52,12 @@ export default class BasicLayout extends Component {
               <Link to="/puzzlecards">
                 <Icon type="dashboard" />
                 <span>Puzzle Cards</span>
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="10">
+              <Link to="/list">
+                <Icon type="dashboard" />
+                <span>List</span>
               </Link>
             </Menu.Item>
           </Menu>

@@ -2,10 +2,11 @@
  * @Author: tim
  * @Date: 2020-04-09 10:41:14
  * @LastEditors: tim
- * @LastEditTime: 2020-04-16 18:28:07
+ * @LastEditTime: 2020-04-29 11:55:25
  * @Description: 
  */
 import request from '../util/request'; 
+import { message } from 'antd';
 
 const delay = (millisecond) => {
   return new Promise((resolve) => {
@@ -31,21 +32,23 @@ export default {
   },
   // 异步
   effects: {
-    *queryInitCards(_, sagaEffects) {
-      const { call, put } = sagaEffects;
+    *queryInitCards({ payload }, { call, put }) {
       // const endPointURI = 'https://08ad1pao69.execute-api.us-east-1.amazonaws.com/random_joke';
-      const endPointURI = '/dev/random_joke';
-      console.log(_, sagaEffects, arguments)
+      const endPointURI = '/dev/random_joke';   // 通过代理形式
+      console.log(payload, arguments)
+      try { // 加入 try catch 捕获抛错
+        const puzzle = yield call(request, endPointURI, payload);
+        // debugger
+        console.log('---------', puzzle)
+        yield put({ type: 'addNewCard', payload: puzzle });
 
-      const puzzle = yield call(request, endPointURI);
-      debugger
-      console.log('---------', puzzle)
-      yield put({ type: 'addNewCard', payload: puzzle });
+        // yield call(delay, 3000);
 
-      // yield call(delay, 3000);
-
-      // const puzzle2 = yield call(request, endPointURI);
-      // yield put({ type: 'addNewCard', payload: puzzle2 });
+        // const puzzle2 = yield call(request, endPointURI);
+        // yield put({ type: 'addNewCard', payload: puzzle2 });
+      } catch (e) {
+        message.error('数据获取失败'); // 打印错误信息
+      }
     }
   },
   // 同步  

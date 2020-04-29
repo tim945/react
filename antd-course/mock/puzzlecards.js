@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-10 10:58:33
  * @LastEditors: tim
- * @LastEditTime: 2020-04-16 18:21:48
+ * @LastEditTime: 2020-04-29 14:36:32
  * @Description: 
  */
 
@@ -24,9 +24,16 @@ const random_jokes = [
 let random_joke_call_count = 0;
 
 export default {
-  'get /dev/random_joke': function (req, res) {
+  // 简单模式
+  'get /dev/random_joke': {
+    setup: 'What is the object oriented way to get wealthy ?',
+    punchline: 'Inheritance',
+  },
+  // 函数模式
+  /* 'get /dev/random_joke': function (req, res) {
     const responseObj = random_jokes[random_joke_call_count % random_jokes.length];
     random_joke_call_count += 1;
+    debugger
     setTimeout(() => {
       res.json(responseObj);
 
@@ -35,5 +42,5 @@ export default {
       // res.json({});
 
     }, 3000);
-  },
+  }, */
 };

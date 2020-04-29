@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-04-06 17:07:21
  * @LastEditors: tim
- * @LastEditTime: 2020-04-10 10:57:56
+ * @LastEditTime: 2020-04-29 15:12:01
  * @Description: 
  */
 export default {
@@ -36,9 +36,9 @@ export default {
       },
       {
         path: '/helloworld',
-        component: 'Helloworld'
+        component: './Helloworld'
       },
-      { path: '/puzzlecards', component: './puzzlecards' },
+      { path: '/puzzlecards', component: './PuzzleCards' },
       {
         path: '/dashboard',
         routes: [
@@ -50,6 +50,7 @@ export default {
           // { path: 'workplace', component: 'Dashboard/Workplace' }
         ]
       },
+      { path: '/list', component: 'List' }
     ]
   }],
   proxy: {

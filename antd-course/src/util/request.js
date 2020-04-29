@@ -1,3 +1,10 @@
+/*
+ * @Author: tim
+ * @Date: 2020-04-10 09:58:23
+ * @LastEditors: tim
+ * @LastEditTime: 2020-04-29 12:02:50
+ * @Description: 
+ */
 // import fetch from 'dva/fetch';
 
 function checkStatus(response) {
@@ -19,6 +26,10 @@ function checkStatus(response) {
  */
 export default async function request(url, options) {
   const response = await fetch(url, options);
-  checkStatus(response);
+  try {
+    checkStatus(response);
+  } catch (e) {
+    console.log(e)
+  }
   return await response.json();
 }
