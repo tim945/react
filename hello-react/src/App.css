@@ -18,10 +18,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
 }
 
 .App-link {
@@ -35,4 +35,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.users {
+  width: 500px;
+}
+.users > li {
+  display: flex; 
+  text-align: left;
+  line-height: 38px;
+  border-bottom: 1px dotted #ccc;
+}
+.users > li > div {
+  flex: 1;
+}
+
+.comment-form{
+  border: 1px solid #333;
+  padding: 10px;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.form-label {
+  width: 200px;
+  font-size: 14px;
+}
+.form-content {
+  flex: 1
+}
+.form-content > input, .form-content > textarea {
+  width: 100%;
+}
+
+.comments {
+  text-align: left;
+  font-size: 14px;
+}
+.comments .name {
+  color: #ccc;
 }

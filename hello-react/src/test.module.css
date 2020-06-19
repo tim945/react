@@ -2,3 +2,11 @@
 .App-header {
   color: green !important;
 }
+
+.App-header-test {
+  composes: App-header; /* 直接继承上面的 */
+  /* composes: className from './another.css'; // 直接使用外部样式表 */
+  color: #fff;
+  font-size: 20px;
+  display: block;
+}
