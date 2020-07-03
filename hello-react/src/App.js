@@ -2,10 +2,18 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import style from './test.module.css';
+import MyLoadable from './loadable';
 import Computer from './components/Test1'
 import CommontApp from './components/Comment/CommentApp'
-import Card from './components/Card'
-import Theme from './components/Theme2'
+// import Card from './components/Card'
+// import Theme from './components/Theme2'
+
+const Card = MyLoadable({
+  loader: () => import('./components/Card'),
+});
+const Theme = MyLoadable({
+  loader: () => import('./components/Theme2'),
+});
 
 function App() {
   return (
