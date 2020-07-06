@@ -1,12 +1,28 @@
+/*
+ * @Author: tim
+ * @Date: 2020-06-12 17:45:25
+ * @LastEditors: tim
+ * @LastEditTime: 2020-07-06 18:29:19
+ * @Description: 
+ */ 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore, applyMiddleware } from "redux"
+import { Provider } from "react-redux"
+import thunk from "redux-thunk"
 import './index.css';
 import App from './App';
+import reducer from "./store/reducer"
 import * as serviceWorker from './serviceWorker';
+
+// const store = createStore(reducer)  // 创建store
+const store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

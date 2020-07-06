@@ -14,6 +14,9 @@ const Card = MyLoadable({
 const Theme = MyLoadable({
   loader: () => import('./components/Theme2'),
 });
+const Articles = MyLoadable({
+  loader: () => import('./components/Article'),
+});
 
 function App() {
   return (
@@ -33,6 +36,8 @@ function App() {
           订阅：<input />
         </Card>
         <Theme />
+
+        <Articles />
       </header>      
     </div>
   );
