@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-07-06 15:08:35
  * @LastEditors: tim
- * @LastEditTime: 2020-07-08 10:34:42
+ * @LastEditTime: 2020-07-10 10:16:00
  * @Description: 
  */ 
 import React, { Component, useState } from "react"
@@ -22,7 +22,7 @@ const Articles = ({ articles, saveArticle, dispatch }) => {
   // }
 
   // 当 connect mapDispatchToProps 时，this.props.dispatch 为 undefined，即不存在
-  console.log(dispatch) 
+  // console.log(dispatch) 
   
   return (
     <div>
