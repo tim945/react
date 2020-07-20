@@ -2,8 +2,8 @@
  * @Author: tim
  * @Date: 2020-07-06 18:06:13
  * @LastEditors: tim
- * @LastEditTime: 2020-07-08 15:12:31
- * @Description: 
+ * @LastEditTime: 2020-07-13 10:25:11
+ * @Description: 返回 action 对象或函数
  */ 
 // import * as actionTypes from "./actionTypes"
 
@@ -29,6 +29,8 @@ export const asyncAddArticle = article => {
     //     document.documentElement.scrollTop = document.body.scrollHeight
     //   })
     // }, 3000)
+
+    // dispatch(addArticle(article))
 
     return new Promise((resolve, reject) => {
       dispatch(addArticle(article))

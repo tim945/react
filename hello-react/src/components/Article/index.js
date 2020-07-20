@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-07-06 15:08:35
  * @LastEditors: tim
- * @LastEditTime: 2020-07-10 10:16:00
+ * @LastEditTime: 2020-07-13 10:34:21
  * @Description: 
  */ 
 import React, { Component, useState } from "react"
@@ -26,7 +26,7 @@ const Articles = ({ articles, saveArticle, dispatch }) => {
   
   return (
     <div>
-      <AddArticle saveArticle={saveArticle} />
+      <AddArticle saveArticle={saveArticle} /> {JSON.stringify(saveArticle.toString())}
       {articles.map(article => (
         <Article key={article.id} article={article} />
       ))}
@@ -82,4 +82,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Articles)
+export default connect(mapStateToProps, mapDispatchToProps)(Articles)   // 通过connect连接
