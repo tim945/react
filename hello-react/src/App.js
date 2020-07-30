@@ -1,5 +1,12 @@
+/*
+ * @Author: tim
+ * @Date: 2020-06-12 17:45:25
+ * @LastEditors: tim
+ * @LastEditTime: 2020-07-30 14:36:16
+ * @Description: 
+ */ 
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import style from './test.module.css';
 import MyLoadable from './loadable';
@@ -14,8 +21,20 @@ const Card = MyLoadable({
 const Theme = MyLoadable({
   loader: () => import('./components/Theme2'),
 });
+const Theme3 = MyLoadable({
+  loader: () => import('./components/Theme3'),
+});
 const Articles = MyLoadable({
   loader: () => import('./components/Article'),
+});
+const Person = MyLoadable({
+  loader: () => import('./components/Person'),
+});
+const Counter = MyLoadable({
+  loader: () => import('./components/Counter'),
+});
+const Counter2 = MyLoadable({
+  loader: () => import('./components/Counter/index2'),
 });
 
 function App() {
@@ -23,6 +42,10 @@ function App() {
     <div className="App">
       {/* <header className="App-header"> */}
       <header className={"App-header " + style['App-header']}>
+        <Person personId="1" />
+        <Theme3 />
+        <Counter initialCount="0" />
+        <Counter2 initialCount="0" />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <p>
           Edit <code>src/App.js</code> and save to reload.

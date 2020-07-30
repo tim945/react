@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-07-06 14:52:06
  * @LastEditors: tim
- * @LastEditTime: 2020-07-10 11:00:38
+ * @LastEditTime: 2020-07-21 10:33:17
  * @Description: 
  */ 
 import React, { useState, useEffect } from "react"
@@ -50,7 +50,7 @@ const AddArticle = ({ saveArticle }) => {
         placeholder="Body"
         onChange={handleArticleData}
       />
-      <button onClick={ addNewArticle }>Add article</button>
+      <button onClick={ addNewArticle }>Add article</button> {JSON.stringify(article)}
     </form>
   )
 }

@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-07-06 15:43:57
  * @LastEditors: tim
- * @LastEditTime: 2020-07-06 18:17:37
+ * @LastEditTime: 2020-07-30 14:24:57
  * @Description: 
  */ 
 
@@ -27,8 +27,9 @@ const reducer = (state = initialState, action) => {
       return {
         ...state, // 原state解构
         articles: state.articles.concat(newArticle),
-      }
-   
+      }   
+    // default:
+      // return state  
   }
   return state
 }

@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-07-06 15:08:35
  * @LastEditors: tim
- * @LastEditTime: 2020-07-13 10:34:21
+ * @LastEditTime: 2020-07-21 10:34:11
  * @Description: 
  */ 
 import React, { Component, useState } from "react"
@@ -26,10 +26,10 @@ const Articles = ({ articles, saveArticle, dispatch }) => {
   
   return (
     <div>
-      <AddArticle saveArticle={saveArticle} /> {JSON.stringify(saveArticle.toString())}
+      <AddArticle saveArticle={saveArticle} />
       {articles.map(article => (
         <Article key={article.id} article={article} />
-      ))}
+      ))}      
     </div>
   )
 }
