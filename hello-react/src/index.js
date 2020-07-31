@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-06-12 17:45:25
  * @LastEditors: tim
- * @LastEditTime: 2020-07-06 18:29:19
+ * @LastEditTime: 2020-07-31 13:55:35
  * @Description: 
  */ 
 import React from 'react';
@@ -12,6 +12,7 @@ import { Provider } from "react-redux"
 import thunk from "redux-thunk"
 import './index.css';
 import App from './App';
+import Routes from './components/Routes';
 import reducer from "./store/reducer"
 import * as serviceWorker from './serviceWorker';
 
@@ -21,7 +22,8 @@ const store = createStore(reducer, applyMiddleware(thunk))
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      {/* <App /> */}
+      <Routes />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

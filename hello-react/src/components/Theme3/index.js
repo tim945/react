@@ -2,10 +2,10 @@
  * @Author: tim
  * @Date: 2020-07-30 14:28:50
  * @LastEditors: tim
- * @LastEditTime: 2020-07-30 14:57:27
+ * @LastEditTime: 2020-07-30 17:12:30
  * @Description: 
  */ 
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 
 const themes = {
   light: {
@@ -27,7 +27,11 @@ const Theme = () => {
     setTheme(theme === 'light' ? 'dark':'light')
   }  
 
-  return (
+  // useEffect(() => {
+  //   console.log(theme)
+  // })
+
+  return (    
     <ThemeContext.Provider value={themes[theme]}>
       <ThemeButton changeTheme={changeTheme} />
     </ThemeContext.Provider>
