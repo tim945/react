@@ -2,12 +2,13 @@
  * @Author: tim
  * @Date: 2020-07-31 13:43:22
  * @LastEditors: tim
- * @LastEditTime: 2020-07-31 14:38:51
+ * @LastEditTime: 2020-08-03 10:24:51
  * @Description: 
  */ 
 import React from 'react';
 import { HashRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
 import App from '../App';
+import Game from './Game';
 
 const Global404 = () => (
   <div>
@@ -48,6 +49,7 @@ const Nav = () => (
   <nav>
     <ul>
       <li><Link to='/'>Home</Link></li>
+      <li><Link to='/game'>Game</Link></li>
       <li><Link to='/faq/who'>Who?</Link></li>
       <li><Link to='/faq/what'>What?</Link></li>
       <li><Link to='/faq/where'>Where?</Link></li>
@@ -77,6 +79,7 @@ const FAQ = () => (
 const Apps = () => (
   <Switch>
     <Route exact path='/' component={Home}/>
+    <Route path='/game' component={Game}/>
     <Route path='/faq' component={FAQ}/>
     <Route component={RedirectAs404}/>
   </Switch>
