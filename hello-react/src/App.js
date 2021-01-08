@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-06-12 17:45:25
  * @LastEditors: tim
- * @LastEditTime: 2020-07-30 14:36:16
+ * @LastEditTime: 2021-01-04 15:28:55
  * @Description: 
  */ 
 import React from 'react';
@@ -42,6 +42,7 @@ function App() {
     <div className="App">
       {/* <header className="App-header"> */}
       <header className={"App-header " + style['App-header']}>
+      {/* <header className="App-header" styleName="App-header"> */}  { /* 通过styleName使用Css Module, 需配合react-css-modules */ }
         <Person personId="1" />
         <Theme3 />
         <Counter initialCount="0" />

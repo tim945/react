@@ -2,13 +2,14 @@
  * @Author: tim
  * @Date: 2020-07-31 13:43:22
  * @LastEditors: tim
- * @LastEditTime: 2020-08-03 10:24:51
+ * @LastEditTime: 2020-12-29 14:30:53
  * @Description: 
  */ 
 import React from 'react';
 import { HashRouter, Route, Switch, Link, Redirect } from 'react-router-dom';
 import App from '../App';
 import Game from './Game';
+import WrapComp from './WrapComp';
 
 const Global404 = () => (
   <div>
@@ -65,6 +66,7 @@ const FAQ = () => (
   <div>
     <h1>Frequently Asked Questions</h1>
     <Switch>
+      <Route exact path='/faq' render={(location) => (<div>{ JSON.stringify(location) }</div>)}/>
       <Route path='/faq/who' component={Who}/>
       <Route path='/faq/what' component={What}/>
       <Route path='/faq/where' component={Where}/>
@@ -89,6 +91,7 @@ const Routes = () => (
   <HashRouter>
     <div>
       <Nav />
+      <WrapComp />
       <Route render={({ location }) => (
         location.state && location.state.is404
           ? <Global404 />

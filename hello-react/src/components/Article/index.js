@@ -2,7 +2,7 @@
  * @Author: tim
  * @Date: 2020-07-06 15:08:35
  * @LastEditors: tim
- * @LastEditTime: 2020-07-21 10:34:11
+ * @LastEditTime: 2020-12-30 09:56:40
  * @Description: 
  */ 
 import React, { Component, useState } from "react"
@@ -67,7 +67,7 @@ const mapStateToProps = state => ({
 })
 
 
-const mapDispatchToProps = dispatch => {
+/*const mapDispatchToProps = dispatch => {
   return {
     // saveArticle: article =>
       // dispatch({ type: 'ADD_ARTICLE', article }),   // type值，可通过创建新的文件，统一管理：import * as actionTypes from "./actionTypes"
@@ -80,6 +80,10 @@ const mapDispatchToProps = dispatch => {
     // 这类的 function 就称为 thunk。
     saveArticle: article => dispatch(asyncAddArticle(article)), // 需使用中间件 redux-thunk
   }
+}*/
+
+const mapDispatchToProps = {
+  saveArticle: asyncAddArticle
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Articles)   // 通过connect连接
